@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon VPC & Peering | Cloud Learning Hub</title>
+    <link rel="stylesheet" href="/shared/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/">☁ Cloud Learning Hub</a>
+        <div class="nav-links">
+            <a href="/aws-services.html">AWS Services</a>
+            <a href="/docker/">Docker</a>
+            <a href="/load-balancer/">Load Balancer</a>
+            <a href="/ci-cd/">CI/CD</a>
+            <a href="/vpc-peering/">VPC</a>
+            <a href="/linux/">Linux</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">AWS Networking · Infrastructure</span>
+            <h1>Amazon VPC & Peering</h1>
+            <p>
+                Learn how to create private cloud networks, divide them
+                into subnets, control traffic and connect separate VPCs.
+            </p>
+            <span class="tag">Virtual Private Cloud</span>
+        </section>
+
+        <h2>What is a VPC?</h2>
+        <section class="card">
+            <p>
+                An Amazon Virtual Private Cloud (VPC) is a logically isolated
+                network in AWS. You choose an IPv4 CIDR range and configure
+                subnets, routes and network access controls.
+            </p>
+        </section>
+
+        <h2>Basic VPC architecture</h2>
+        <section class="card">
+            <pre><code>
+                AWS Cloud
+                    |
+              +-------------+
+              |    VPC A    |
+              | 10.0.0.0/16 |
+              |             |
+              | Public Subnet
+              | 10.0.1.0/24 |
+              |      EC2    |
+              +-------------+
+                     |
+                VPC Peering
+                     |
+              +-------------+
+              |    VPC B    |
+              | 10.1.0.0/16 |
+              | Private EC2 |
+              +-------------+
+            </code></pre>
+            <p>
+                This is a conceptual example. VPC peering enables private
+                routing between VPCs when routes and security rules permit it.
+            </p>
+        </section>
+
+        <h2>Important networking components</h2>
+        <section class="grid">
+            <article class="card">
+                <h3>CIDR Block</h3>
+                <p>Defines the IP address range for a VPC or subnet.
+                Example: 10.0.0.0/16.</p>
+            </article>
+            <article class="card">
+                <h3>Subnets</h3>
+                <p>Divide a VPC address range into smaller networks
+                associated with individual Availability Zones.</p>
+            </article>
+            <article class="card">
+                <h3>Route Tables</h3>
+                <p>Determine where network traffic is directed, using
+                destination ranges and targets such as gateways.</p>
+            </article>
+            <article class="card">
+                <h3>Internet Gateway</h3>
+                <p>Allows eligible resources to communicate with the
+                internet when routes and public IP addressing permit it.</p>
+            </article>
+            <article class="card">
+                <h3>Security Groups</h3>
+                <p>Act as stateful virtual firewalls attached to network
+                interfaces to control inbound and outbound traffic.</p>
+            </article>
+            <article class="card">
+                <h3>VPC Peering</h3>
+                <p>Connects two VPCs for private IP communication.
+                Their CIDR ranges must not overlap.</p>
+            </article>
+        </section>
+
+        <h2>How VPC peering works</h2>
+        <section class="card">
+            <p>
+                1. Create a peering connection request.
+                2. Accept the request from the other VPC owner when required.
+                3. Add routes to both VPC route tables.
+                4. Update security groups and network ACLs if needed.
+                5. Test connectivity between permitted private IP addresses.
+            </p>
+            <p>
+                Important: VPC peering does not automatically create routes
+                or allow all traffic, and it does not support transitive routing.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        Cloud Learning Hub · VPC networking learning guide
+    </footer>
+</body>
+</html>

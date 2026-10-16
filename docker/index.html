@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker & Containers | Cloud Learning Hub</title>
+    <link rel="stylesheet" href="/shared/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/">☁ Cloud Learning Hub</a>
+        <div class="nav-links">
+            <a href="/aws-services.html">AWS Services</a>
+            <a href="/docker/">Docker</a>
+            <a href="/load-balancer/">Load Balancer</a>
+            <a href="/ci-cd/">CI/CD</a>
+            <a href="/vpc-peering/">VPC</a>
+            <a href="/linux/">Linux</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">DevOps · Containers</span>
+            <h1>Understand Docker</h1>
+            <p>
+                Package an application and its dependencies into a
+                portable container that can run consistently across environments.
+            </p>
+            <span class="tag">This page is a learning guide, not a running container</span>
+        </section>
+
+        <h2>Core Docker concepts</h2>
+        <section class="grid">
+            <article class="card">
+                <h3>Docker Image</h3>
+                <p>A read-only template containing application files,
+                libraries and instructions used to create containers.</p>
+            </article>
+            <article class="card">
+                <h3>Docker Container</h3>
+                <p>A running or stopped instance created from an image,
+                isolated from other processes using OS-level features.</p>
+            </article>
+            <article class="card">
+                <h3>Dockerfile</h3>
+                <p>A text file containing instructions for building
+                an image, such as choosing a base image and copying files.</p>
+            </article>
+            <article class="card">
+                <h3>Docker Registry</h3>
+                <p>A service that stores and distributes images.
+                Docker Hub is one commonly used public registry.</p>
+            </article>
+        </section>
+
+        <h2>Useful Docker commands</h2>
+        <section class="card">
+            <p>Check your Docker installation and inspect containers with these commands:</p>
+            <pre><code>docker --version
+docker pull nginx
+docker images
+docker run -d --name web -p 8085:80 nginx
+docker ps
+docker logs web
+docker stop web
+docker rm web</code></pre>
+            <p>
+                The example publishes container port 80 on host port 8085.
+                Run it only on a machine where Docker is installed.
+            </p>
+        </section>
+
+        <h2>Typical workflow</h2>
+        <section class="card">
+            <p>
+                Write a Dockerfile → Build an image → Test a container →
+                Push the image to a registry → Deploy it to a server.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        Cloud Learning Hub · Docker learning guide
+    </footer>
+</body>
+</html>

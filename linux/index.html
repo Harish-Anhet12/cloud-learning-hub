@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Commands | Cloud Learning Hub</title>
+    <link rel="stylesheet" href="/shared/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/">☁ Cloud Learning Hub</a>
+        <div class="nav-links">
+            <a href="/aws-services.html">AWS Services</a>
+            <a href="/docker/">Docker</a>
+            <a href="/load-balancer/">Load Balancer</a>
+            <a href="/ci-cd/">CI/CD</a>
+            <a href="/vpc-peering/">VPC</a>
+            <a href="/linux/">Linux</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">Linux · System administration</span>
+            <h1>Linux Commands Cheat Sheet</h1>
+            <p>
+                Learn the commands commonly used to manage files,
+                permissions, processes, services and networking on Linux servers.
+            </p>
+            <span class="tag">Ubuntu · EC2 · DevOps</span>
+        </section>
+
+        <h2>1. Navigate files and directories</h2>
+        <section class="card">
+            <pre><code>pwd                 # Show current directory
+ls -lah             # List files, including hidden files
+cd /var/www         # Change directory
+mkdir demo          # Create a directory
+touch index.html    # Create an empty file
+cp file.txt copy.txt
+mv old.txt new.txt
+cat index.html      # Display file contents</code></pre>
+        </section>
+
+        <h2>2. File permissions</h2>
+        <section class="card">
+            <pre><code>ls -l                       # View permissions
+chmod 644 index.html        # Owner writes; others read
+chmod 755 script.sh         # Executable permissions
+sudo chown ubuntu:ubuntu file.txt</code></pre>
+            <p>
+                Use the minimum permissions required. Avoid making files
+                writable by everyone unless there is a specific reason.
+            </p>
+        </section>
+
+        <h2>3. Processes and system resources</h2>
+        <section class="card">
+            <pre><code>ps aux                 # List processes
+top                    # Monitor processes
+free -h                # Memory usage
+df -h                  # Disk space
+du -sh /var/www        # Directory size
+uptime                 # System uptime</code></pre>
+        </section>
+
+        <h2>4. Services and logs</h2>
+        <section class="card">
+            <pre><code>sudo systemctl status nginx
+sudo systemctl restart nginx
+sudo systemctl reload nginx
+sudo journalctl -u nginx --since today
+sudo nginx -t</code></pre>
+            <p>
+                Test Nginx configuration with <code>nginx -t</code> before
+                reloading it after a configuration change.
+            </p>
+        </section>
+
+        <h2>5. Networking</h2>
+        <section class="card">
+            <pre><code>ip addr                 # Show network addresses
+ip route                # Show routes
+ss -lntp                # Show listening TCP ports
+curl -I http://localhost/
+curl -I http://localhost:8080/
+ping -c 4 8.8.8.8       # Test basic network reachability</code></pre>
+        </section>
+
+        <h2>6. Package management</h2>
+        <section class="card">
+            <pre><code>sudo apt update
+sudo apt upgrade
+sudo apt install nginx
+sudo apt remove package-name</code></pre>
+            <p>
+                Review package changes before confirming upgrades or removals
+                on a production server.
+            </p>
+        </section>
+
+        <h2>7. Git basics</h2>
+        <section class="card">
+            <pre><code>git status
+git branch
+git switch -c feature/my-change
+git add .
+git commit -m "Update website"
+git push -u origin feature/my-change</code></pre>
+            <p>
+                Review changes before using <code>git add .</code>, especially
+                when working with secrets or configuration files.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        Cloud Learning Hub · Linux commands reference
+    </footer>
+</body>
+</html>

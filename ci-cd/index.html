@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI/CD Pipeline | Cloud Learning Hub</title>
+    <link rel="stylesheet" href="/shared/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/">☁ Cloud Learning Hub</a>
+        <div class="nav-links">
+            <a href="/aws-services.html">AWS Services</a>
+            <a href="/docker/">Docker</a>
+            <a href="/load-balancer/">Load Balancer</a>
+            <a href="/ci-cd/">CI/CD</a>
+            <a href="/vpc-peering/">VPC</a>
+            <a href="/linux/">Linux</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">DevOps · Automation</span>
+            <h1>CI/CD Pipeline</h1>
+            <p>
+                Learn how code changes move from a developer's laptop
+                through automated checks to a deployed application.
+            </p>
+            <span class="tag">Continuous Integration · Continuous Delivery</span>
+        </section>
+
+        <h2>How a CI/CD pipeline works</h2>
+        <section class="grid">
+            <article class="card">
+                <span class="tag">01 · Source</span>
+                <h3>Git & GitHub</h3>
+                <p>Developers commit changes to Git and push them to a
+                shared repository such as GitHub.</p>
+            </article>
+            <article class="card">
+                <span class="tag">02 · Build</span>
+                <h3>Build</h3>
+                <p>Automation prepares the application, installs dependencies
+                and creates a deployable artifact or container image.</p>
+            </article>
+            <article class="card">
+                <span class="tag">03 · Test</span>
+                <h3>Automated Tests</h3>
+                <p>Run unit tests, integration tests and quality checks
+                to catch problems before release.</p>
+            </article>
+            <article class="card">
+                <span class="tag">04 · Deploy</span>
+                <h3>Deployment</h3>
+                <p>Release the verified version to a test or production
+                environment using a controlled process.</p>
+            </article>
+        </section>
+
+        <h2>Example pipeline flow</h2>
+        <section class="card">
+            <pre><code>
+Developer
+   |
+   v
+Git commit and push
+   |
+   v
+GitHub Repository
+   |
+   v
+Jenkins Pipeline
+   |
+   +--> Build
+   |
+   +--> Test
+   |
+   +--> Package Docker Image
+   |
+   v
+Deploy to Server or AWS
+            </code></pre>
+            <p>
+                This is an illustrative workflow. It does not mean Jenkins
+                is installed or a pipeline is running on this EC2 instance.
+            </p>
+        </section>
+
+        <h2>Tools used in CI/CD</h2>
+        <section class="grid">
+            <article class="card">
+                <h3>Git</h3>
+                <p>Tracks source-code changes and supports branching,
+                merging and collaboration.</p>
+            </article>
+            <article class="card">
+                <h3>GitHub</h3>
+                <p>Hosts repositories and supports pull requests,
+                reviews and workflow automation.</p>
+            </article>
+            <article class="card">
+                <h3>Jenkins</h3>
+                <p>Automates pipeline stages using jobs and pipeline
+                definitions, including a Jenkinsfile.</p>
+            </article>
+            <article class="card">
+                <h3>AWS</h3>
+                <p>Provides infrastructure and services where applications
+                and deployment workflows can run.</p>
+            </article>
+        </section>
+
+        <h2>Why CI/CD matters</h2>
+        <section class="card">
+            <p>
+                <strong>Consistency:</strong> repeat the same deployment steps.
+                <strong> Faster feedback:</strong> discover errors earlier.
+                <strong>Safer releases:</strong> test changes before deployment.
+                <strong>Traceability:</strong> track which code version was released.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        Cloud Learning Hub · CI/CD learning guide
+    </footer>
+</body>
+</html>

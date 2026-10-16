@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Balancer | Cloud Learning Hub</title>
+    <link rel="stylesheet" href="/shared/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/">☁ Cloud Learning Hub</a>
+        <div class="nav-links">
+            <a href="/aws-services.html">AWS Services</a>
+            <a href="/docker/">Docker</a>
+            <a href="/load-balancer/">Load Balancer</a>
+            <a href="/ci-cd/">CI/CD</a>
+            <a href="/vpc-peering/">VPC</a>
+            <a href="/linux/">Linux</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">AWS Networking · High availability</span>
+            <h1>Load Balancing Explained</h1>
+            <p>
+                A load balancer distributes incoming application traffic
+                across multiple targets to improve availability and scalability.
+            </p>
+            <span class="tag">Concepts and architecture</span>
+        </section>
+
+        <h2>How it works</h2>
+        <section class="card">
+            <pre><code>
+           Users
+              |
+              v
+      Application Load Balancer
+              |
+       +------+------+
+       |             |
+       v             v
+    EC2 - A        EC2 - B
+       |             |
+       +------+------+
+              |
+       Application data
+            </code></pre>
+            <p>
+                The load balancer receives requests, evaluates its routing
+                rules and sends traffic to healthy registered targets.
+            </p>
+        </section>
+
+        <h2>Important components</h2>
+        <section class="grid">
+            <article class="card">
+                <h3>Listener</h3>
+                <p>Checks for connection requests on a configured protocol
+                and port, such as HTTP on port 80 or HTTPS on port 443.</p>
+            </article>
+            <article class="card">
+                <h3>Target Group</h3>
+                <p>Defines the targets receiving traffic, such as EC2 instances,
+                and the protocol and port used to reach them.</p>
+            </article>
+            <article class="card">
+                <h3>Health Checks</h3>
+                <p>Periodically test target health so unhealthy targets can
+                be excluded from normal traffic routing.</p>
+            </article>
+            <article class="card">
+                <h3>Auto Scaling</h3>
+                <p>Can add or remove EC2 instances as demand changes.
+                A load balancer and Auto Scaling solve different problems.</p>
+            </article>
+        </section>
+
+        <h2>Request flow</h2>
+        <section class="card">
+            <p>
+                1. A user sends a request to the load balancer.
+                2. A listener accepts the request.
+                3. Routing rules select a target group.
+                4. Traffic goes to a healthy target.
+                5. The application returns a response to the user.
+            </p>
+        </section>
+
+        <h2>Why use a load balancer?</h2>
+        <section class="grid">
+            <article class="card">
+                <h3>Availability</h3>
+                <p>Reduce dependence on a single application server.</p>
+            </article>
+            <article class="card">
+                <h3>Scalability</h3>
+                <p>Distribute requests among multiple targets as traffic grows.</p>
+            </article>
+            <article class="card">
+                <h3>Health monitoring</h3>
+                <p>Route requests away from targets that fail health checks.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        Cloud Learning Hub · Load balancing learning guide
+    </footer>
+</body>
+</html>
